@@ -24,7 +24,7 @@ limitations under the License.
 #include <utility>
 #include <vector>
 
-#include "third_party/absl/container/flat_hash_set.h"
+#include "absl/container/flat_hash_set.h"
 #include "llvm/ADT/STLExtras.h"
 #include "llvm/ADT/Sequence.h"
 #include "llvm/ADT/SmallVector.h"
