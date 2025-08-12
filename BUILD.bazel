@@ -1781,7 +1781,7 @@ test_suite(
 
 cc_binary(
     name = "mlir_builder_tblgen",
-    srcs = ["bulider/MlirBuilderTblgen.cpp"],
+    srcs = ["builder/MlirBuilderTblgen.cpp"],
     ##compatible_with = get_compatible_with_portable(),
     includes = ["."],
     deps = [
