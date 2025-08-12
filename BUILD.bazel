@@ -1781,7 +1781,7 @@ test_suite(
 
 cc_binary(
     name = "mlir_builder_tblgen",
-    srcs = ["builder/MlirBuilderTblgen.cpp"],
+    srcs = ["stablehlo/builder/MlirBuilderTblgen.cpp"],
     ##compatible_with = get_compatible_with_portable(),
     includes = ["."],
     deps = [
@@ -1799,8 +1799,8 @@ cc_binary(
 
 cc_library(
     name = "mlir_builder",
-    srcs = ["MlirBuilder.cpp"],
-    hdrs = ["MlirBuilder.h"],
+    srcs = ["stablehlo/builder/MlirBuilder.cpp"],
+    hdrs = ["stablehlo/builder/MlirBuilder.h"],
     ##compatible_with = get_compatible_with_portable(),
     includes = ["."],
     deps = [
@@ -1817,8 +1817,8 @@ cc_library(
 
 cc_library(
     name = "attr_type_builder_util",
-    srcs = ["AttrTypeBuilderUtil.cpp"],
-    hdrs = ["AttrTypeBuilderUtil.h"],
+    srcs = ["stablehlo/builder/AttrTypeBuilderUtil.cpp"],
+    hdrs = ["stablehlo/builder/AttrTypeBuilderUtil.h"],
     ##compatible_with = get_compatible_with_portable(),
     includes = ["."],
     deps = [
@@ -1836,9 +1836,9 @@ gentbl_cc_library(
     name = "chlo_builder_inc",
     ##compatible_with = get_compatible_with_portable(),
     tbl_outs = {
-        "ChloBuilder.h.inc": ["-gen-builder-decls"],
-        "ChloBuilder.cpp.inc": ["-gen-builder-defs"],
-        "ChloBuilder.md": ["-gen-builder-docs"],
+        "stablehlo/builder/ChloBuilder.h.inc": ["-gen-builder-decls"],
+        "stablehlo/builder/ChloBuilder.cpp.inc": ["-gen-builder-defs"],
+        "stablehlo/builder/ChloBuilder.md": ["-gen-builder-docs"],
     },
     tblgen = ":mlir_builder_tblgen",
     td_file = "//:stablehlo/dialect/ChloOps.td",
@@ -1852,8 +1852,8 @@ gentbl_cc_library(
 
 cc_library(
     name = "chlo_builder",
-    srcs = ["ChloBuilder.cpp"],
-    hdrs = ["ChloBuilder.h"],
+    srcs = ["stablehlo/builder/ChloBuilder.cpp"],
+    hdrs = ["stablehlo/builder/ChloBuilder.h"],
     ##compatible_with = get_compatible_with_portable(),
     includes = ["."],
     deps = [
@@ -1870,9 +1870,9 @@ gentbl_cc_library(
     name = "func_builder_inc",
     ##compatible_with = get_compatible_with_portable(),
     tbl_outs = {
-        "FuncBuilder.h.inc": ["-gen-builder-decls"],
-        "FuncBuilder.cpp.inc": ["-gen-builder-defs"],
-        "FuncBuilder.md": ["-gen-builder-docs"],
+        "stablehlo/builder/FuncBuilder.h.inc": ["-gen-builder-decls"],
+        "stablehlo/builder/FuncBuilder.cpp.inc": ["-gen-builder-defs"],
+        "stablehlo/builder/FuncBuilder.md": ["-gen-builder-docs"],
     },
     tblgen = ":mlir_builder_tblgen",
     td_file = "@llvm-project//mlir:include/mlir/Dialect/Func/IR/FuncOps.td",
@@ -1886,8 +1886,8 @@ gentbl_cc_library(
 
 cc_library(
     name = "func_builder",
-    srcs = ["FuncBuilder.cpp"],
-    hdrs = ["FuncBuilder.h"],
+    srcs = ["stablehlo/builder/FuncBuilder.cpp"],
+    hdrs = ["stablehlo/builder/FuncBuilder.h"],
     ##compatible_with = get_compatible_with_portable(),
     includes = ["."],
     deps = [
@@ -1903,9 +1903,9 @@ gentbl_cc_library(
     name = "stablehlo_builder_inc",
     ##compatible_with = get_compatible_with_portable(),
     tbl_outs = {
-        "StablehloBuilder.h.inc": ["-gen-builder-decls"],
-        "StablehloBuilder.cpp.inc": ["-gen-builder-defs"],
-        "StablehloBuilder.md": ["-gen-builder-docs"],
+        "stablehlo/builder/StablehloBuilder.h.inc": ["-gen-builder-decls"],
+        "stablehlo/builder/StablehloBuilder.cpp.inc": ["-gen-builder-defs"],
+        "stablehlo/builder/StablehloBuilder.md": ["-gen-builder-docs"],
     },
     tblgen = ":mlir_builder_tblgen",
     td_file = ":stablehlo/dialect/StablehloOps.td",
@@ -1921,8 +1921,8 @@ gentbl_cc_library(
 
 cc_library(
     name = "stablehlo_builder",
-    srcs = ["StablehloBuilder.cpp"],
-    hdrs = ["StablehloBuilder.h"],
+    srcs = ["stablehlo/builder/StablehloBuilder.cpp"],
+    hdrs = ["stablehlo/builder/StablehloBuilder.h"],
     ##compatible_with = get_compatible_with_portable(),
     includes = ["."],
     deps = [
